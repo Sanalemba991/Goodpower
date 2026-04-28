@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-1.5 bg-white border border-gray-200 text-indigo-600 rounded-full text-sm font-semibold mb-5 shadow-sm"
+            className="inline-block px-4 py-1.5 bg-white border border-gray-200 text-yellow-600 rounded-full text-sm font-semibold mb-5 shadow-sm"
           >
             Customer Stories
           </motion.span>

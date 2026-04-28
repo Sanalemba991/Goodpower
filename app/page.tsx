@@ -4,6 +4,7 @@ import Banner from "./component/Banner";
 import Fun from "./component/Fun";
 import ProductsCases from "./component/ProductsCases";
 import Testimonial from "./component/Testimonal";
+import Footer from "./component/Footer";
 export default function Home() {
   return (
     <>
@@ -12,6 +13,7 @@ export default function Home() {
     <Fun/>
     <ProductsCases/>
     <Testimonial/>
+    <Footer/>
     </>
   );
 }
