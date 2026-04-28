@@ -73,7 +73,7 @@ const Navbar = () => {
                 <span className="text-white font-bold text-sm">G</span>
               </div>
               <span className="text-xl font-bold text-slate-800 tracking-tight">
-                Good<span className="text-amber-500 transition-colors group-hover:text-yellow-500">ower</span>
+                Good<span className="text-amber-500 transition-colors group-hover:text-yellow-500">Power</span>
               </span>
             </Link>
 

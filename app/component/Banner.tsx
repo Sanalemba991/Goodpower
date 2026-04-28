@@ -6,66 +6,74 @@ import Image from "next/image";
 const SLIDES = [
   {
     id: 1,
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85",
-  
+    image: "/banner/banner1.jpg",
+
     tagStyle: {
-      background: "rgba(255,210,80,0.18)",
-      color: "#ffd24f",
-      border: "1px solid rgba(255,210,80,0.35)",
+      background: "rgba(80,160,255,0.18)",
+      color: "#60a5fa",
+      border: "1px solid rgba(80,160,255,0.35)",
     },
-    headline: "Discover the World's Hidden Peaks",
+    headline: "Advanced LiFePO4 Battery Powerwall",
     subtext:
-      "Breathtaking mountain escapes curated for the bold traveler. Elevate your journey beyond the ordinary.",
-    primaryBtn: "Explore Destinations",
-    secondaryBtn: "Watch Film ▷",
-    btnGradient: "linear-gradient(135deg,#ffd24f,#f59e0b)",
+      "Reliable, long-lasting energy storage solutions designed for homes and industries. Power your future with safe and efficient lithium technology.",
+
+    // ✅ Updated Buttons
+    primaryBtn: "Our Products",
+    secondaryBtn: "Services ▷",
+
+    btnGradient: "linear-gradient(135deg,#fde047,#facc15)",
     btnColor: "#1a1200",
+
     overlay:
-      "linear-gradient(135deg,rgba(15,20,40,0.85) 0%,rgba(15,20,40,0.4) 55%,transparent 100%)",
+      "linear-gradient(135deg,rgba(5,10,25,0.85) 0%,rgba(5,10,25,0.4) 55%,transparent 100%)",
   },
   {
     id: 2,
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1400&q=85",
-   
+    image: "/banner/banner2.jpg",
+
     tagStyle: {
       background: "rgba(80,220,130,0.18)",
-      color: "#5de898",
+      color: "#4ade80",
       border: "1px solid rgba(80,220,130,0.35)",
     },
-    headline: "Reconnect with Ancient Forests",
+    headline: "EV & High Voltage Battery Systems",
     subtext:
-      "Immerse yourself in the healing power of untouched wilderness. Find stillness in every breath of fresh air.",
-    primaryBtn: "Book a Retreat",
+      "Powering electric mobility and industrial systems with high-performance EV batteries.",
 
-    btnGradient: "linear-gradient(135deg,#5de898,#10b981)",
-    btnColor: "#052010",
+    // ✅ Updated Buttons
+    primaryBtn: "Our Products",
+    secondaryBtn: "Contact ▷",
+
+    btnGradient: "linear-gradient(135deg,#fde047,#facc15)",
+    btnColor: "#1a1200",
+
     overlay:
       "linear-gradient(135deg,rgba(5,30,15,0.85) 0%,rgba(5,30,15,0.4) 55%,transparent 100%)",
   },
   {
     id: 3,
-    image:
-      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1400&q=85",
-   
-    tagStyle: {
-      background: "rgba(255,120,80,0.18)",
-      color: "#ff8a60",
-      border: "1px solid rgba(255,120,80,0.35)",
-    },
-    headline: "Live the City Like a Local",
-    subtext:
-      "Dive into the pulse of iconic skylines. Handpicked urban experiences crafted for curious explorers.",
-    primaryBtn: "View City Guides",
+    image: "/banner/banner3.jpg",
 
-    btnGradient: "linear-gradient(135deg,#ff8a60,#ef4444)",
-    btnColor: "#1a0500",
+    tagStyle: {
+      background: "rgba(255,180,80,0.18)",
+      color: "#fbbf24",
+      border: "1px solid rgba(255,180,80,0.35)",
+    },
+    headline: "Complete Solar & Energy Solutions",
+    subtext:
+      "All-in-one solar charge controller inverters and smart energy systems.",
+
+    // ✅ Updated Buttons
+    primaryBtn: "Our Services",
+    secondaryBtn: "Contact ▷",
+
+    btnGradient: "linear-gradient(135deg,#fde047,#facc15)",
+    btnColor: "#1a1200",
+
     overlay:
-      "linear-gradient(135deg,rgba(40,10,5,0.85) 0%,rgba(40,10,5,0.35) 55%,transparent 100%)",
+      "linear-gradient(135deg,rgba(40,25,5,0.85) 0%,rgba(40,25,5,0.35) 55%,transparent 100%)",
   },
 ];
-
 const DURATION = 5000;
 const TICK = 80;
 
@@ -155,13 +163,11 @@ export default function Banner() {
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
               {/* Tag */}
-              
 
               {/* Headline */}
               <h1
                 className="text-white font-black leading-[1.1] mb-4 max-w-xl"
                 style={{
-                  fontFamily: "'Playfair Display', serif",
                   fontSize: "clamp(36px, 5vw, 64px)",
                 }}
               >
@@ -174,15 +180,15 @@ export default function Banner() {
               </p>
 
               {/* Buttons */}
-              <div className="flex gap-4 flex-wrap items-center">
-                <button
-                  className="flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
-                  style={{ background: s.btnGradient, color: s.btnColor }}
-                >
-                  {s.primaryBtn} ↗
-                </button>
-               
-              </div>
+              <button
+                className="inline-flex w-fit items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 hover:shadow-lg active:scale-95 
+  [&:hover_span]:translate-x-[2px] [&:hover_span]:-translate-y-[2px]"
+                style={{ background: s.btnGradient, color: s.btnColor }}
+              >
+                {s.primaryBtn}
+
+                <span className="transition-transform duration-200">↗</span>
+              </button>
             </div>
           </div>
         ))}
@@ -202,7 +208,7 @@ export default function Banner() {
         <button
           onClick={() => goTo(current - 1)}
           aria-label="Previous slide"
-          className="absolute left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full  text-white flex items-center justify-center  transition-all duration-300 text-xl opacity-0 group-hover:opacity-100"
+          className="absolute left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full  text-white flex items-center justify-center  transition-all duration-300 text-3xl opacity-0 group-hover:opacity-100 focus:outline-none"
         >
           ←
         </button>
@@ -211,7 +217,7 @@ export default function Banner() {
         <button
           onClick={() => goTo(current + 1)}
           aria-label="Next slide"
-          className="absolute right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full  text-white flex items-center justify-center   transition-all duration-300 text-xl opacity-0 group-hover:opacity-100"
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full  text-white flex items-center justify-center   transition-all duration-300 text-3xl opacity-0 group-hover:opacity-100 focus:outline-none"
         >
           →
         </button>
