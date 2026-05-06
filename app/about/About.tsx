@@ -1,12 +1,14 @@
 // app/about/page.jsx
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -125,11 +127,51 @@ const values = [
 ];
 
 const stats = [
-  { number: "12+", label: "Years Manufacturing" },
-  { number: "1GWh+", label: "Annual Production" },
-  { number: "80+", label: "Countries Served" },
-  { number: "1000+", label: "Cycle Life (Cycles)" },
+  { number: 12, suffix: "+", label: "Years Manufacturing" },
+  { number: 1, suffix: "GWh+", label: "Annual Production" },
+  { number: 80, suffix: "+", label: "Countries Served" },
+  { number: 1000, suffix: "+", label: "Cycle Life (Cycles)" },
 ];
+
+interface AnimatedCounterProps {
+  end: number;
+  suffix: string;
+  label: string;
+}
+
+function AnimatedCounter({ end, suffix, label }: AnimatedCounterProps) {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    if (inView && !hasStarted) {
+      setHasStarted(true);
+    }
+  }, [inView, hasStarted]);
+
+  return (
+    <div ref={ref} className="stat-item group relative">
+      <div className="absolute -top-4 left-0 w-10 h-[2px] bg-yellow-500 transition-all duration-500 group-hover:w-20" />
+      <div className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-[#1c1917] leading-none">
+        {hasStarted ? (
+          <>
+            <CountUp start={0} end={end} duration={2.5} delay={0.2} />
+            {suffix}
+          </>
+        ) : (
+          <>0{suffix}</>
+        )}
+      </div>
+      <div className="mt-4 w-8 h-[2px] bg-stone-200 transition-colors duration-300 group-hover:bg-yellow-500" />
+      <p className="mt-4 text-sm text-stone-500 tracking-[0.12em] uppercase font-medium leading-relaxed">
+        {label}
+      </p>
+    </div>
+  );
+}
 
 export default function About() {
   const pathname = usePathname();
@@ -213,19 +255,6 @@ export default function About() {
           opacity: 0,
           duration: 1,
           stagger: 0.1,
-          ease: "power2.out",
-        });
-
-        gsap.from(".stat-item", {
-          scrollTrigger: {
-            trigger: statsRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.15,
           ease: "power2.out",
         });
 
@@ -453,18 +482,12 @@ export default function About() {
           {/* Stats grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-8">
             {stats.map((stat, index) => (
-              <div key={index} className="stat-item group relative">
-                {/* Top border accent */}
-                <div className="absolute -top-4 left-0 w-10 h-[2px] bg-yellow-500 transition-all duration-500 group-hover:w-20" />
-
-                <div className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-[#1c1917] leading-none">
-                  {stat.number}
-                </div>
-                <div className="mt-4 w-8 h-[2px] bg-stone-200 transition-colors duration-300 group-hover:bg-yellow-500" />
-                <p className="mt-4 text-sm text-stone-500 tracking-[0.12em] uppercase font-medium leading-relaxed">
-                  {stat.label}
-                </p>
-              </div>
+              <AnimatedCounter
+                key={index}
+                end={stat.number}
+                suffix={stat.suffix}
+                label={stat.label}
+              />
             ))}
           </div>
 
@@ -476,8 +499,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* ── CTA Section ── */}
       <section className="py-32 px-6 md:px-12 bg-[#1c1917] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">
