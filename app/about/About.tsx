@@ -350,7 +350,7 @@ export default function About() {
               </h2>
               <div className="space-y-6 text-stone-600">
                 <p className="story-text text-lg leading-relaxed">
-                  Established in Shenzhen, Goodpower has grown into a premier
+                  Established in China, Goodpower has grown into a premier
                   supplier of advanced energy storage solutions. We specialize
                   in LiFePO4 technology, delivering safe, long-lasting power for
                   homes, electric vehicles, and industrial applications.
@@ -371,10 +371,10 @@ export default function About() {
             <div className="story-image relative">
               <div className="aspect-[4/5] relative overflow-hidden rounded-sm">
                 <Image
-                  src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=800&h=1000&fit=crop"
+                  src="/about2.png"
                   alt="Goodpower Manufacturing Facility"
                   fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="object-cover  transition-all duration-700"
                 />
               </div>
               <div className="absolute -bottom-8 -left-8 w-48 h-48 border border-yellow-300 -z-10" />
@@ -515,12 +515,7 @@ export default function About() {
             >
               Request a Quote
             </Link>
-            <Link
-              href="/products"
-              className="inline-block px-12 py-4 border border-white/20 text-xs uppercase tracking-widest font-bold hover:bg-white/10 transition-colors duration-300"
-            >
-              View Catalog
-            </Link>
+           
           </div>
         </div>
       </section>

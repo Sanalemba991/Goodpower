@@ -3,14 +3,14 @@
 import React from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { 
-  Battery, 
-  Zap, 
-  Settings, 
-  ArrowRight, 
-  CheckCircle2, 
-  Users, 
-  Globe, 
+import {
+  Battery,
+  Zap,
+  Settings,
+  ArrowRight,
+  CheckCircle2,
+  Users,
+  Globe,
   ShieldCheck,
   Cpu,
   Activity,
@@ -67,17 +67,17 @@ export default function Solution() {
 
   return (
     <main className="bg-white text-slate-900 selection:bg-amber-100 selection:text-amber-900 font-sans">
-      
+
       {/* ── HERO SECTION: SOPHISTICATED & PRECISION ── */}
       <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
         {/* Technical Grid Background */}
-        <div className="absolute inset-0 z-0 opacity-[0.03]" 
-             style={{ backgroundImage: `radial-gradient(#000 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
+        <div className="absolute inset-0 z-0 opacity-[0.03]"
+          style={{ backgroundImage: `radial-gradient(#000 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white z-0" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
-            
+
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-10">
               <div className="space-y-6">
@@ -114,20 +114,7 @@ export default function Solution() {
                 </motion.p>
               </div>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="flex flex-wrap gap-4"
-              >
-                <button className="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 transition-all flex items-center gap-2 group">
-                  Explore Solutions
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="px-8 py-4 bg-white border border-slate-200 text-slate-900 rounded-xl font-bold text-sm hover:bg-slate-50 transition-all">
-                  Technical Docs
-                </button>
-              </motion.div>
+
 
               {/* Refined Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-slate-100">
@@ -153,41 +140,41 @@ export default function Solution() {
 
             {/* Right: Technical Visualization */}
             <div className="lg:col-span-5 relative">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1 }}
                 className="relative z-10"
               >
-                <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 relative group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80" 
-                    alt="Industrial Technology" 
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+                <div className="aspect-[4/5]  overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 relative group">
+                  <img
+                    src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80"
+                    alt="Industrial Technology"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   {/* Overlay Labels */}
-                  <div className="absolute top-6 right-6 bg-white/90 backdrop-blur px-4 py-2 rounded-lg border border-white/20 shadow-sm">
+                  <div className="absolute top-6 right-6 bg-white/90 backdrop-blur px-4 py-2 border border-white/20 shadow-sm">
                     <div className="flex items-center gap-2">
                       <Activity size={12} className="text-emerald-500" />
                       <span className="text-[10px] font-bold text-slate-900">SYSTEM STABLE</span>
                     </div>
                   </div>
-                  <div className="absolute bottom-6 left-6 bg-slate-900/90 backdrop-blur px-4 py-4 rounded-xl border border-white/10 shadow-xl max-w-[200px]">
+                  <div className="absolute bottom-6 left-6 bg-slate-900/90 backdrop-blur px-4 py-4  border border-white/10 shadow-xl max-w-[200px]">
                     <p className="text-white/60 text-[9px] font-bold uppercase tracking-widest mb-1">Architecture</p>
                     <p className="text-white text-xs font-medium leading-tight">Modular DC-coupled storage arrays with AI balancing.</p>
                   </div>
                 </div>
 
                 {/* Floating Elements */}
-                <motion.div 
+                <motion.div
                   animate={{ y: [0, -20, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-12 -right-12 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl z-0" 
+                  className="absolute -top-12 -right-12 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl z-0"
                 />
-                <motion.div 
+                <motion.div
                   animate={{ y: [0, 20, 0] }}
                   transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-12 -left-12 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl z-0" 
+                  className="absolute -bottom-12 -left-12 w-64 h-64 bg-blue-500/5  blur-3xl z-0"
                 />
               </motion.div>
             </div>
@@ -207,18 +194,18 @@ export default function Solution() {
           <div className="space-y-40">
             {/* Scheme 01 */}
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
                 className="relative group"
               >
-                <div className="absolute -inset-2 bg-slate-100 rounded-[2.5rem] rotate-1 scale-[1.02] -z-10 group-hover:rotate-0 transition-transform duration-500" />
-                <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1000&q=90" 
-                    alt="Energy Storage" 
+                <div className="absolute -inset-2 bg-slate-100  rotate-1 scale-[1.02] -z-10 group-hover:rotate-0 transition-transform duration-500" />
+                <div className="aspect-[4/3]  overflow-hidden shadow-2xl relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1000&q=90"
+                    alt="Energy Storage"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
@@ -226,8 +213,8 @@ export default function Solution() {
                   </div>
                 </div>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -259,26 +246,24 @@ export default function Solution() {
                   ))}
                 </div>
 
-                <Link href="/solution/energy-storage-solutions" className="inline-flex items-center gap-2 text-amber-600 font-bold text-sm border-b-2 border-amber-100 hover:border-amber-500 pb-1 transition-all">
-                  View Detailed Specs <ArrowRight size={16} />
-                </Link>
+
               </motion.div>
             </div>
 
             {/* Scheme 02 */}
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
                 className="lg:order-2 relative group"
               >
-                <div className="absolute -inset-2 bg-amber-50 rounded-[2.5rem] -rotate-1 scale-[1.02] -z-10 group-hover:rotate-0 transition-transform duration-500" />
-                <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1000&q=90" 
-                    alt="Power Systems" 
+                <div className="absolute -inset-2 bg-amber-50  -rotate-1 scale-[1.02] -z-10 group-hover:rotate-0 transition-transform duration-500" />
+                <div className="aspect-[4/3]  overflow-hidden shadow-2xl relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1000&q=90"
+                    alt="Power Systems"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
@@ -286,8 +271,8 @@ export default function Solution() {
                   </div>
                 </div>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -304,11 +289,11 @@ export default function Solution() {
 
                 <div className="flex flex-wrap gap-3">
                   {["EV Charging", "Robotics", "Power Conversion", "Modular DC", "Industrial Automation"].map(tag => (
-                    <span key={tag} className="px-4 py-2 bg-slate-50 border border-slate-100 rounded-lg text-[10px] font-bold text-slate-600 uppercase tracking-widest">{tag}</span>
+                    <span key={tag} className="px-4 py-2 bg-slate-50 border border-slate-100  text-[10px] font-bold text-slate-600 uppercase tracking-widest">{tag}</span>
                   ))}
                 </div>
 
-                <div className="p-6 bg-slate-900 rounded-2xl space-y-4">
+                <div className="p-6 bg-slate-900  space-y-4">
                   <div className="flex items-center gap-3">
                     <Box className="text-amber-500" size={20} />
                     <h4 className="text-white font-bold">Precision OEM/ODM</h4>
@@ -340,7 +325,7 @@ export default function Solution() {
                   Excellence.
                 </h3>
               </div>
-              
+
               <div className="space-y-0">
                 {[
                   { t: "Discovery", d: "Deep technical analysis, site audit, and feasibility modeling.", i: "01" },
@@ -348,8 +333,8 @@ export default function Solution() {
                   { t: "Integration", d: "Seamless deployment, testing, and grid synchronization.", i: "03" },
                   { t: "Optimization", d: "Continuous monitoring and AI-driven performance tuning.", i: "04" }
                 ].map((step, idx) => (
-                  <motion.div 
-                    key={step.t} 
+                  <motion.div
+                    key={step.t}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -365,48 +350,21 @@ export default function Solution() {
                 ))}
               </div>
             </div>
-            
+
             <div className="relative group">
-              <div className="absolute -inset-4 bg-amber-500/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              <div className="relative rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-30px_rgba(0,0,0,0.15)] border-[1px] border-slate-200">
-                <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90" 
-                  alt="Precision Engineering" 
+              <div className="absolute -inset-4 bg-amber-500/10  blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative  overflow-hidden shadow-[0_50px_100px_-30px_rgba(0,0,0,0.15)] border-[1px] border-slate-200">
+                <img
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90"
+                  alt="Precision Engineering"
                   className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                 />
                 {/* Tech UI Overlay */}
                 <div className="absolute inset-0 bg-slate-900/10 mix-blend-overlay" />
                 <div className="absolute top-10 left-10">
-                   <Cpu className="text-white/80 animate-pulse" size={32} />
+                  <Cpu className="text-white/80 animate-pulse" size={32} />
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA SECTION ── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-slate-900 rounded-[3rem] p-12 lg:p-20 text-center space-y-10 relative overflow-hidden">
-            {/* Background Accent */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-[100px]" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px]" />
-
-            <div className="space-y-4 relative z-10">
-              <h2 className="text-3xl lg:text-5xl font-bold text-white tracking-tight">Ready to power your next project?</h2>
-              <p className="text-slate-400 max-w-xl mx-auto text-lg">
-                Connect with our engineering team for a technical consultation or a custom solution quote.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-6 relative z-10">
-              <button className="px-10 py-5 bg-amber-500 text-slate-900 rounded-2xl font-black text-sm hover:bg-amber-400 transition-all shadow-xl shadow-amber-500/20">
-                Contact Engineering
-              </button>
-              <button className="px-10 py-5 bg-transparent border border-white/20 text-white rounded-2xl font-bold text-sm hover:bg-white/5 transition-all">
-                Download Catalog
-              </button>
             </div>
           </div>
         </div>

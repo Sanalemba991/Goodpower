@@ -2,24 +2,29 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const SLIDES = [
   {
     id: 1,
-    image: "/banner/banner1.jpg",
+    image: "/banner1.png",
 
     tagStyle: {
       background: "rgba(80,160,255,0.18)",
       color: "#60a5fa",
       border: "1px solid rgba(80,160,255,0.35)",
     },
+
     headline: "Advanced LiFePO4 Battery Powerwall",
+
     subtext:
       "Reliable, long-lasting energy storage solutions designed for homes and industries. Power your future with safe and efficient lithium technology.",
 
-    // ✅ Updated Buttons
-    primaryBtn: "Our Products",
-    secondaryBtn: "Services ▷",
+    primaryBtn: "Products",
+
+
+    // Navigation paths for buttons
+    primaryBtnPath: "/products",
 
     btnGradient: "linear-gradient(135deg,#fde047,#facc15)",
     btnColor: "#1a1200",
@@ -27,22 +32,27 @@ const SLIDES = [
     overlay:
       "linear-gradient(135deg,rgba(5,10,25,0.85) 0%,rgba(5,10,25,0.4) 55%,transparent 100%)",
   },
+
   {
     id: 2,
-    image: "/banner/banner2.jpg",
+    image: "/banner2.png",
 
     tagStyle: {
       background: "rgba(80,220,130,0.18)",
       color: "#4ade80",
       border: "1px solid rgba(80,220,130,0.35)",
     },
+
     headline: "EV & High Voltage Battery Systems",
+
     subtext:
       "Powering electric mobility and industrial systems with high-performance EV batteries.",
 
-    // ✅ Updated Buttons
-    primaryBtn: "Our Products",
-    secondaryBtn: "Contact ▷",
+    primaryBtn: "Contact Us",
+
+    // Navigation paths for buttons
+    primaryBtnPath: "/contact",
+
 
     btnGradient: "linear-gradient(135deg,#fde047,#facc15)",
     btnColor: "#1a1200",
@@ -50,22 +60,26 @@ const SLIDES = [
     overlay:
       "linear-gradient(135deg,rgba(5,30,15,0.85) 0%,rgba(5,30,15,0.4) 55%,transparent 100%)",
   },
+
   {
     id: 3,
-    image: "/banner/banner3.jpg",
+    image: "/banner3.png",
 
     tagStyle: {
       background: "rgba(255,180,80,0.18)",
       color: "#fbbf24",
       border: "1px solid rgba(255,180,80,0.35)",
     },
+
     headline: "Complete Solar & Energy Solutions",
+
     subtext:
       "All-in-one solar charge controller inverters and smart energy systems.",
 
-    // ✅ Updated Buttons
-    primaryBtn: "Our Services",
-    secondaryBtn: "Contact ▷",
+    primaryBtn: "About Us",
+
+    // Navigation paths for buttons
+    primaryBtnPath: "/about",
 
     btnGradient: "linear-gradient(135deg,#fde047,#facc15)",
     btnColor: "#1a1200",
@@ -74,6 +88,7 @@ const SLIDES = [
       "linear-gradient(135deg,rgba(40,25,5,0.85) 0%,rgba(40,25,5,0.35) 55%,transparent 100%)",
   },
 ];
+
 const DURATION = 5000;
 const TICK = 80;
 
@@ -116,18 +131,14 @@ export default function Banner() {
     };
   }, [startTimers]);
 
+  const currentSlide = SLIDES[current];
+
   return (
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
       `}</style>
 
-      {/* 
-         - w-screen: Full width of the viewport
-         - h-screen or h-[85vh]: Full height (adjust as needed)
-         - rounded-none: Removed rounded corners for "full size" feel
-         - group: Added to enable hover effects on children
-      */}
       <div className="relative w-screen h-[90vh] md:h-screen overflow-hidden shadow-2xl group">
         {SLIDES.map((s, i) => (
           <div
@@ -148,7 +159,7 @@ export default function Banner() {
               fill
               priority={i === 0}
               className="object-cover object-center"
-              sizes="100vw" // Optimized for full width
+              sizes="100vw"
             />
 
             {/* Gradient Overlay */}
@@ -162,9 +173,6 @@ export default function Banner() {
               className="absolute inset-0 z-20 flex flex-col justify-center px-8 md:px-20 lg:px-32"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              {/* Tag */}
-
-              {/* Headline */}
               <h1
                 className="text-white font-black leading-[1.1] mb-4 max-w-xl"
                 style={{
@@ -174,26 +182,29 @@ export default function Banner() {
                 {s.headline}
               </h1>
 
-              {/* Subtext */}
               <p className="text-white/70 font-light leading-relaxed max-w-sm md:max-w-md mb-10 text-base">
                 {s.subtext}
               </p>
 
-              {/* Buttons */}
-              <button
-                className="inline-flex w-fit items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 hover:shadow-lg active:scale-95 
-  [&:hover_span]:translate-x-[2px] [&:hover_span]:-translate-y-[2px]"
-                style={{ background: s.btnGradient, color: s.btnColor }}
-              >
-                {s.primaryBtn}
+              {/* Buttons Container */}
+              <div className="flex flex-wrap gap-4">
+                {/* Primary Button */}
+                <Link href={s.primaryBtnPath}>
+                  <button
+                    className="inline-flex w-fit items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 hover:shadow-lg active:scale-95 [&:hover_span]:translate-x-[2px] [&:hover_span]:-translate-y-[2px] cursor-pointer"
+                    style={{ background: s.btnGradient, color: s.btnColor }}
+                  >
+                    {s.primaryBtn}
+                    <span className="transition-transform duration-200">↗</span>
+                  </button>
+                </Link>
 
-                <span className="transition-transform duration-200">↗</span>
-              </button>
+                {/* Secondary Button */}
+                
+              </div>
             </div>
           </div>
         ))}
-
-        {/* Progress Bar */}
 
         {/* Slide Counter */}
         <div
@@ -208,7 +219,7 @@ export default function Banner() {
         <button
           onClick={() => goTo(current - 1)}
           aria-label="Previous slide"
-          className="absolute left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full  text-white flex items-center justify-center  transition-all duration-300 text-3xl opacity-0 group-hover:opacity-100 focus:outline-none"
+          className="absolute left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full text-white flex items-center justify-center transition-all duration-300 text-3xl opacity-0 group-hover:opacity-100 focus:outline-none cursor-pointer hover:bg-white/10"
         >
           ←
         </button>
@@ -217,12 +228,13 @@ export default function Banner() {
         <button
           onClick={() => goTo(current + 1)}
           aria-label="Next slide"
-          className="absolute right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full  text-white flex items-center justify-center   transition-all duration-300 text-3xl opacity-0 group-hover:opacity-100 focus:outline-none"
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full text-white flex items-center justify-center transition-all duration-300 text-3xl opacity-0 group-hover:opacity-100 focus:outline-none cursor-pointer hover:bg-white/10"
         >
           →
         </button>
 
-        {/* Dot Indicators - Moved inside the full-width container at the bottom center */}
+        {/* Dot Indicators */}
+        
       </div>
     </>
   );

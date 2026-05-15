@@ -39,37 +39,37 @@ const Fun: React.FC = () => {
 
   return (
     <section className="relative bg-white text-gray-800 overflow-hidden font-sans">
-      
+
       {/* Subtle Background Texture */}
-      <div className="absolute inset-0 z-0 opacity-5" 
-           style={{ backgroundImage: 'radial-gradient(#1e293b 1px, transparent 1px)', backgroundSize: '24px 24px' }} 
+      <div className="absolute inset-0 z-0 opacity-5"
+        style={{ backgroundImage: 'radial-gradient(#1e293b 1px, transparent 1px)', backgroundSize: '24px 24px' }}
       />
 
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-12 lg:py-20">
-        
+
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* --- Left Column: Visuals --- */}
-          <motion.div 
+          <motion.div
             className="col-span-1 lg:col-span-6 relative"
             variants={imageVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            
+
             {/* Main Image Card */}
-            <div className="relative group rounded-2xl overflow-hidden shadow-lg ">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" 
-                alt="FunPack Facility" 
+            <div className="relative group  overflow-hidden shadow-lg ">
+              <img
+                src="./home1.png"
+                alt="FunPack Facility"
                 className="w-full h-[300px] lg:h-[360px] object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              
+
               {/* Badge Overlay */}
-              <motion.div 
+              <motion.div
                 className="absolute top-4 left-4 flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full py-1.5 px-3 shadow-sm"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -79,12 +79,12 @@ const Fun: React.FC = () => {
                 <Award className="w-3.5 h-3.5 text-yellow-600" />
                 <span className="text-[10px] font-bold tracking-wide uppercase text-gray-700">High-Tech Enterprise</span>
               </motion.div>
-              
+
               {/* Company Info Overlay */}
               <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-white tracking-tight">FunPack</h3>
-                  <p className="text-white/70 text-xs">Fengpai Electronics Co., Ltd.</p>
+                  <h3 className="text-xl font-bold text-white tracking-tight">Good Power</h3>
+                  <p className="text-white/70 text-xs">Chuangye 1st Street, Dongguan, Guangdong, China</p>
                 </div>
                 <div className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm rounded-md py-1 px-2 border border-white/10">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
@@ -94,7 +94,7 @@ const Fun: React.FC = () => {
             </div>
 
             {/* Secondary Image - Floating Animation */}
-            <motion.div 
+            <motion.div
               className="hidden lg:block absolute -bottom-4 -right-4 w-48 h-36  overflow-hidden border-2 border-white shadow-xl z-20"
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -102,9 +102,9 @@ const Fun: React.FC = () => {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, rotate: -2 }}
             >
-              <img 
-                src="https://images.unsplash.com/photo-1565043666747-69f6646db940?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Assembly Line" 
+              <img
+                src="./home2.png"
+                alt="Assembly Line"
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -112,7 +112,7 @@ const Fun: React.FC = () => {
 
           {/* --- Right Column: Content --- */}
           <div className="col-span-1 lg:col-span-6 flex flex-col justify-center">
-            
+
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -137,22 +137,7 @@ const Fun: React.FC = () => {
               </motion.p>
 
               {/* CTA Buttons */}
-              <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mb-10">
-                {/* Primary Button */}
-                <button 
-                  onClick={() => setIsVideoPlaying(true)}
-                  className="group flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white font-medium text-sm py-2.5 px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg active:scale-95"
-                >
-                  <Play className="w-3.5 h-3.5 fill-current" />
-                  Corporate Video
-                </button>
-                
-                {/* Secondary Button */}
-                <button className="group flex items-center gap-2 text-gray-600 hover:text-yellow-400 border border-gray-200 hover:border-yellow-200 font-medium text-sm py-2.5 px-5 rounded-lg transition-all duration-300 bg-white hover:bg-gray-50 active:scale-95">
-                  Learn More
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </button>
-              </motion.div>
+
 
               {/* Stats Grid */}
               <motion.div variants={itemVariants} className="grid grid-cols-3 gap-6 border-t border-gray-100 pt-6">
@@ -181,7 +166,7 @@ const Fun: React.FC = () => {
       {/* Video Modal - AnimatePresence for entry/exit */}
       <AnimatePresence>
         {isVideoPlaying && (
-          <motion.div 
+          <motion.div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm cursor-pointer"
             onClick={() => setIsVideoPlaying(false)}
             initial={{ opacity: 0 }}
@@ -189,7 +174,7 @@ const Fun: React.FC = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <motion.div 
+            <motion.div
               className="relative w-full max-w-3xl aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-white/10"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

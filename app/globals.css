@@ -58,3 +58,8 @@ body {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
