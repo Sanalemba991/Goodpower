@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'; // Import hook to get current path
 
@@ -86,13 +87,15 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-14 sm:h-16">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-1.5 sm:gap-2.5 group flex-shrink-0">
-              <div className="w-7 sm:w-8 h-7 sm:h-8 bg-amber-400 rounded-lg flex items-center justify-center transition-colors group-hover:bg-yellow-500 flex-shrink-0">
-                <span className="text-white font-bold text-xs sm:text-sm">G</span>
-              </div>
-              <span className="text-lg sm:text-xl font-bold text-slate-800 tracking-tight">
-                Good<span className="text-amber-500 transition-colors group-hover:text-yellow-500">Power</span>
-              </span>
+            <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
+              <Image
+                src="/logo.png"
+                alt="GoodPower logo"
+                width={70}
+                height={70}
+                className="rounded-lg transition-colors group-hover:opacity-90"
+                priority
+              />
             </Link>
 
             {/* Desktop Links */}

@@ -17,7 +17,7 @@ const teamMembers = [
     name: "Wei Zhang",
     role: "Founder & Chief Engineer",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+      "./4.png",
     bio: "Pioneering battery management systems with 20+ years in electrochemistry",
   },
   {
@@ -391,7 +391,7 @@ export default function About() {
           <div className="flex flex-col gap-2.5 h-full">
             <div className="innovation-img relative flex-[2.3] min-h-0 overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&fit=crop"
+                src="/4.png"
                 alt="Business collaboration"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"
@@ -401,7 +401,7 @@ export default function About() {
             <div className="flex gap-2.5 flex-1">
               <div className="innovation-img relative w-1/2 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&fit=crop"
+                  src="/5.png"
                   alt="R&D Lab"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
@@ -410,7 +410,7 @@ export default function About() {
 
               <div className="innovation-img relative w-1/2 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&fit=crop"
+                  src="/6.png"
                   alt="Our team"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
@@ -443,7 +443,7 @@ export default function About() {
           <div className="flex flex-col gap-2.5 h-full">
             <div className="innovation-img relative flex-1 overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1764054655220-99548fc12fe3?w=500&auto=format&fit=crop&q=60"
+                src="/7.png"
                 alt="Factory quality inspection"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"
@@ -452,7 +452,7 @@ export default function About() {
 
             <div className="innovation-img relative flex-1 overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&fit=crop"
+                src="/8.png"
                 alt="Warehouse and logistics"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"
