@@ -91,8 +91,8 @@ const Navbar = () => {
               <Image
                 src="/logo.png"
                 alt="GoodPower logo"
-                width={70}
-                height={70}
+                width={100}
+                height={100}
                 className="rounded-lg transition-colors group-hover:opacity-90"
                 priority
               />

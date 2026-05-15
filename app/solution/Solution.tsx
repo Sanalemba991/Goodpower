@@ -25,7 +25,7 @@ const solutionsData = [
     tagline: "Industrial Reliability",
     slug: "energy-storage-solutions",
     icon: Battery,
-    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=90",
+    image: "/solution3.png",
     description: "End-to-end energy storage systems engineered for grid-scale stability and residential independence.",
     features: ["Grid-Scale Balancing", "High-Voltage DC", "Smart Management"],
     color: "amber"
@@ -148,7 +148,7 @@ export default function Solution() {
               >
                 <div className="aspect-[4/5]  overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 relative group">
                   <img
-                    src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80"
+                    src="/solution2.png"
                     alt="Industrial Technology"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
@@ -204,7 +204,7 @@ export default function Solution() {
                 <div className="absolute -inset-2 bg-slate-100  rotate-1 scale-[1.02] -z-10 group-hover:rotate-0 transition-transform duration-500" />
                 <div className="aspect-[4/3]  overflow-hidden shadow-2xl relative">
                   <img
-                    src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1000&q=90"
+                    src="/solution.png"
                     alt="Energy Storage"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -262,7 +262,7 @@ export default function Solution() {
                 <div className="absolute -inset-2 bg-amber-50  -rotate-1 scale-[1.02] -z-10 group-hover:rotate-0 transition-transform duration-500" />
                 <div className="aspect-[4/3]  overflow-hidden shadow-2xl relative">
                   <img
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1000&q=90"
+                    src="./solution1.png"
                     alt="Power Systems"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -355,7 +355,7 @@ export default function Solution() {
               <div className="absolute -inset-4 bg-amber-500/10  blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="relative  overflow-hidden shadow-[0_50px_100px_-30px_rgba(0,0,0,0.15)] border-[1px] border-slate-200">
                 <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90"
+                  src="/solution3.png"
                   alt="Precision Engineering"
                   className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                 />
