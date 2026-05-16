@@ -961,17 +961,18 @@ export default function ContactPage() {
               <EyebrowLabel>Headquarters</EyebrowLabel>
               <div className="relative border border-[#EBEBEA] rounded-[2px] overflow-hidden h-[220px] mb-2">
                 <iframe
-                  src="https://www.google.com/maps/dir/13.0753282,77.5346042/13.0753491,77.5346256/@13.075195,77.5333972,368m/data=!3m1!1e3!4m2!4m1!3e3?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.979092798744!2d72.8561!3d19.0707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c94032a0b0e1%3A0x6fe0e7e2e2e8e0e0!2sBandra%20Kurla%20Complex%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1700000000000"
                   width="100%"
                   height="100%"
                   style={{
                     border: 0,
-                    filter: "grayscale(1) contrast(1.1) brightness(0.95)",
+                    filter: "",
                   }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
+
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -983,11 +984,11 @@ export default function ContactPage() {
                   }}
                   className="absolute bottom-3 left-3 bg-[#0A0A0A] text-white font-mono text-[10px] tracking-[0.12em] uppercase px-3 py-1.5 rounded-[2px]"
                 >
-                  BKC · Mumbai
+                  Bengaluru
                 </motion.div>
               </div>
               <p className="font-mono text-[11px] text-gray-700 tracking-[0.08em] uppercase text-right">
-                Bandra Kurla Complex, Mumbai 400051
+                Bengaluru, Karnataka 560056
               </p>
             </div>
 
