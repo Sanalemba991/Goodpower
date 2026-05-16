@@ -236,15 +236,15 @@ function Reveal({
 
   const customVariants = delay
     ? {
-        ...variants,
-        visible: {
-          ...(variants?.visible as any),
-          transition: {
-            ...((variants?.visible as any)?.transition || {}),
-            delay,
-          },
+      ...variants,
+      visible: {
+        ...(variants?.visible as any),
+        transition: {
+          ...((variants?.visible as any)?.transition || {}),
+          delay,
         },
-      }
+      },
+    }
     : variants;
 
   return (
@@ -397,15 +397,15 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
           animate={
             open
               ? {
-                  rotate: 135,
-                  backgroundColor: "#FFD600",
-                  borderColor: "#FFD600",
-                }
+                rotate: 135,
+                backgroundColor: "#FFD600",
+                borderColor: "#FFD600",
+              }
               : {
-                  rotate: 0,
-                  backgroundColor: "transparent",
-                  borderColor: "#D8D8D7",
-                }
+                rotate: 0,
+                backgroundColor: "transparent",
+                borderColor: "#D8D8D7",
+              }
           }
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="w-7 h-7 rounded-full border flex items-center justify-center flex-shrink-0"
@@ -478,10 +478,9 @@ export default function ContactPage() {
   };
 
   const inputCls = (name: string) =>
-    `w-full bg-[#FAFAF8] border rounded-[2px] pl-10 pr-4 py-[13px] font-sans text-[14px] text-[#0A0A0A] placeholder:text-gray-400 outline-none transition-all duration-200 appearance-none ${
-      focused === name
-        ? "border-[#FFD600] shadow-[0_0_0_3px_rgba(255,214,0,0.07)]"
-        : "border-[#EBEBEA] hover:border-[#D8D8D7]"
+    `w-full bg-[#FAFAF8] border rounded-[2px] pl-10 pr-4 py-[13px] font-sans text-[14px] text-[#0A0A0A] placeholder:text-gray-400 outline-none transition-all duration-200 appearance-none ${focused === name
+      ? "border-[#FFD600] shadow-[0_0_0_3px_rgba(255,214,0,0.07)]"
+      : "border-[#EBEBEA] hover:border-[#D8D8D7]"
     }`;
 
   const iconCls = (name: string) =>
@@ -544,10 +543,10 @@ export default function ContactPage() {
       </section>
 
       {/* ══ CHANNELS ══ */}
-      
+
 
       {/* ══ FORM + SIDEBAR ══ */}
-      
+
       <section className="bg-white border-b border-[#EBEBEA] py-20">
         <div className="max-w-[1200px] mx-auto px-10">
           <motion.div
@@ -675,7 +674,7 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </section>
-<section
+      <section
         id="form"
         className="max-w-[1200px] mx-auto px-10 py-20 grid grid-cols-1 lg:grid-cols-[7fr_5fr] gap-20 border-b border-[#EBEBEA]"
       >
@@ -962,7 +961,7 @@ export default function ContactPage() {
               <EyebrowLabel>Headquarters</EyebrowLabel>
               <div className="relative border border-[#EBEBEA] rounded-[2px] overflow-hidden h-[220px] mb-2">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.979092798744!2d72.8561!3d19.0707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c94032a0b0e1%3A0x6fe0e7e2e2e8e0e0!2sBandra%20Kurla%20Complex%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1700000000000"
+                  src="https://www.google.com/maps/dir/13.0753282,77.5346042/13.0753491,77.5346256/@13.075195,77.5333972,368m/data=!3m1!1e3!4m2!4m1!3e3?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
                   width="100%"
                   height="100%"
                   style={{
